@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/colors.dart';
 import 'package:my_portfolio/constants/nav_items.dart';
+import 'package:my_portfolio/styles/style.dart';
+import 'package:my_portfolio/widgets/site_name_logo.dart';
 
 class HeaderDesktop extends StatelessWidget{
   const HeaderDesktop({super.key});
@@ -11,29 +13,16 @@ class HeaderDesktop extends StatelessWidget{
     return Container(
       height: 65,
       width: double.infinity,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [CustomColor.navBgStart, CustomColor.navBgEnd],
-          begin: Alignment.centerLeft,
-          end: Alignment.centerRight,
-
-        ),
-
-      ),
+      decoration: kGradientBoxDecoration,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           //Name
           Padding(
             padding: const EdgeInsets.only(left: 20),
-            child: Text(
-              "Phạm Anh Tuấn",
-              style: TextStyle(
-                color: CustomColor.textPrimary,
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
+            child:
+              SiteNameLogo(onTap: (){}
               ),
-            ),
           ),
           Spacer(),
           // Navigation Buttons
