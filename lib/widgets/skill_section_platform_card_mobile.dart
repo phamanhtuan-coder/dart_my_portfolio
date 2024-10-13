@@ -7,15 +7,16 @@ class PlatformCardMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return ConstrainedBox(
       constraints: const BoxConstraints(maxWidth: 350),
-      child: Wrap(
-        spacing: 10,
-        runSpacing: 10,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           for (int i = 0; i < platformItems.length; i++)
             Container(
-              width: 150,
+              margin: EdgeInsets.symmetric(vertical: 5,horizontal: screenWidth*0.2),
               height: 80,
               decoration: BoxDecoration(
                 color: CustomColor.cardBg,
@@ -29,23 +30,25 @@ class PlatformCardMobile extends StatelessWidget {
                 ],
               ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                 child: Row(
                   children: [
                     // Platform icon
                     Image.asset(
+                      alignment: Alignment.center,
                       platformItems[i]['img'],
-                      width: 28, // Smaller icon size
-                      height: 28,
+                      width: screenWidth>=500? 128: screenWidth>=390?64:32,
+                      height: screenWidth>=500? 128: screenWidth>=390?64:32,
                     ),
                     const SizedBox(width: 10),
                     // Platform title
                     Expanded(
                       child: Text(
+                        textAlign: TextAlign.center,
                         platformItems[i]['title'],
                         style: TextStyle(
                           color: CustomColor.subColor,
-                          fontSize: 14, // Slightly reduced font size for compactness
+                          fontSize: screenWidth>600? 24:screenWidth>500? 20: screenWidth>=390?18:16,
                           fontWeight: FontWeight.bold,
                         ),
                         maxLines: 2,

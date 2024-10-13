@@ -8,9 +8,9 @@ class SkillCardMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: const BoxConstraints(maxWidth: 350),
+      constraints: const BoxConstraints(maxWidth: 450),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+        padding: const EdgeInsets.symmetric(horizontal:32, vertical: 10),
         child:
           Wrap(
             spacing: 8,
@@ -18,7 +18,7 @@ class SkillCardMobile extends StatelessWidget {
             children: [
               for (int i = 0; i < skillItems.length; i++)
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 8),
+                  padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 15),
                   decoration: BoxDecoration(
                     color: CustomColor.cardBg,
                     borderRadius: BorderRadius.circular(10),

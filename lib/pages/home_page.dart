@@ -6,6 +6,7 @@ import 'package:my_portfolio/widgets/header_desktop.dart';
 import 'package:my_portfolio/widgets/header_mobile.dart';
 import 'package:my_portfolio/widgets/hero_section_desktop.dart';
 import 'package:my_portfolio/widgets/hero_section_mobile.dart';
+import 'package:my_portfolio/widgets/homepage_about_me_desktop.dart';
 import 'package:my_portfolio/widgets/skill_section_desktop.dart';
 import 'package:my_portfolio/widgets/skill_section_mobile.dart';
 
@@ -36,9 +37,9 @@ class _HomePageState extends State<HomePage> {
             scrollDirection: Axis.vertical,
             children: [
               // Navigation Bar
-              if (constraints.maxWidth > kMinDesktopMaxWidth)
+              if (constraints.maxWidth > kMedDesktopMaxWidth)
                 const HeaderDesktop(),
-              if (constraints.maxWidth <= kMinDesktopMaxWidth)
+              if (constraints.maxWidth <= kMedDesktopMaxWidth)
                 HeaderMobile(
                   onLogoTap: () {},
                   onMenuTap: () {
@@ -60,21 +61,7 @@ class _HomePageState extends State<HomePage> {
 
 
               // Light Section (About Me)
-              Container(
-                height: 500,
-                width: double.infinity,
-                color: CustomColor.bgLight,
-                child: Center(
-                  child: Text(
-                    "About Me",
-                    style: TextStyle(
-                      color: CustomColor.subColor,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
+              AboutMeSectionDesktop(),
 
 
 
