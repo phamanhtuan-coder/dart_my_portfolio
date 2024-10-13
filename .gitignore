@@ -29,7 +29,6 @@ migrate_working_dir/
 .flutter-plugins-dependencies
 .pub-cache/
 .pub/
-/build/
 
 # Symbolication related
 app.*.symbols
@@ -41,3 +40,8 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+/build/4e3a89d0c5e65a6ea437bcccd222605b/
+/build/5f916bdcfa288e4c176ec1b54ee8808e/
+/build/flutter_assets/
+/build/f872507f30e2ff2523f0f1d19160266e.cache.dill.track.dill
+/build/last_build_run.json

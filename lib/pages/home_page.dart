@@ -7,6 +7,7 @@ import 'package:my_portfolio/widgets/header_mobile.dart';
 import 'package:my_portfolio/widgets/hero_section_desktop.dart';
 import 'package:my_portfolio/widgets/hero_section_mobile.dart';
 import 'package:my_portfolio/widgets/homepage_about_me_desktop.dart';
+import 'package:my_portfolio/widgets/homepage_about_me_mobile.dart';
 import 'package:my_portfolio/widgets/skill_section_desktop.dart';
 import 'package:my_portfolio/widgets/skill_section_mobile.dart';
 
@@ -61,9 +62,10 @@ class _HomePageState extends State<HomePage> {
 
 
               // Light Section (About Me)
-              AboutMeSectionDesktop(),
-
-
+              if (constraints.maxWidth > kMedDesktopMaxWidth)
+              AboutMeSectionDesktop()
+              else
+                AboutMeSectionMobile(),
 
               // Dark Section (Past Experience)
               Container(

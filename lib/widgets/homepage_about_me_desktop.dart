@@ -11,10 +11,7 @@ class AboutMeSectionDesktop extends StatefulWidget {
 }
 
 class _AboutMeSectionDesktopState extends State<AboutMeSectionDesktop> {
-  // Index for the currently selected timeline point
   int _currentSlideIndex = 0;
-
-  // Sample text and image data for each timeline point
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +36,7 @@ class _AboutMeSectionDesktopState extends State<AboutMeSectionDesktop> {
             const SizedBox(height: 20),
             // Content
             Container(
-              height: 420, // Adjusted height for a larger desktop section
+              height: 420,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -66,14 +63,14 @@ class _AboutMeSectionDesktopState extends State<AboutMeSectionDesktop> {
                           aboutMeData[_currentSlideIndex]['text']!,
                           style: TextStyle(
                             color: CustomColor.subColor,
-                            fontSize: 22, // Regular font for description
+                            fontSize: 22,
                           ),
                         ),
                         const SizedBox(height: 20),
                         // Read More button (Placeholder)
                         ElevatedButton(
                           onPressed: () {
-                            // Future redirection logic to About Me page
+
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: CustomColor.subColor, // Button color
@@ -92,7 +89,7 @@ class _AboutMeSectionDesktopState extends State<AboutMeSectionDesktop> {
                         Align(
                           alignment: Alignment.center,
                           child: Container(
-                            width: 350, // Image width
+                            width: 450, // Image width
                             height: 300, // Image height
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
@@ -114,21 +111,23 @@ class _AboutMeSectionDesktopState extends State<AboutMeSectionDesktop> {
                           ),
                         ),
                         //Slider
-                        Positioned(
-                          right: 10,
-                          top: 0,
-                          bottom: 0,
-                          child: VerticalTimelineSliderDesktop(
-                            currentIndex: _currentSlideIndex,
-                            onSelected: (index) {
-                              setState(() {
-                                _currentSlideIndex = index;
-                              });
-                            },
-                            timelineData: aboutMeData,
-                          ),
-                        ),
+
                       ],
+
+                    ),
+                  ),
+                  Positioned(
+                    right: 10,
+                    top: 0,
+                    bottom: 0,
+                    child: VerticalTimelineSliderDesktop(
+                      currentIndex: _currentSlideIndex,
+                      onSelected: (index) {
+                        setState(() {
+                          _currentSlideIndex = index;
+                        });
+                      },
+                      timelineData: aboutMeData,
                     ),
                   ),
                 ],
