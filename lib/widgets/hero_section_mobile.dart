@@ -52,7 +52,7 @@ class HeroSectionMobile extends StatelessWidget {
               "Xin chào,\nmình là Phạm Anh Tuấn",
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: minHeight * 0.035,
+                fontSize: minHeight * 0.05,
                 fontWeight: FontWeight.bold,
                 color: CustomColor.textPrimary,
                 height: 1.5,

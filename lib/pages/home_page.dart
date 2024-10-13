@@ -7,6 +7,7 @@ import 'package:my_portfolio/widgets/header_mobile.dart';
 import 'package:my_portfolio/widgets/hero_section_desktop.dart';
 import 'package:my_portfolio/widgets/hero_section_mobile.dart';
 import 'package:my_portfolio/widgets/skill_section_desktop.dart';
+import 'package:my_portfolio/widgets/skill_section_mobile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -53,8 +54,9 @@ class _HomePageState extends State<HomePage> {
 
               // Dark Section (Skills)
               if (constraints.maxWidth > kMinDesktopMaxWidth)
-              SkillSectionDesktop(),
-              //else
+              SkillSectionDesktop()
+              else
+                SkillSectionMobile(),
 
 
               // Light Section (About Me)
