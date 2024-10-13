@@ -30,7 +30,7 @@ class HeaderDesktop extends StatelessWidget{
             height: 50,
             margin: const EdgeInsets.symmetric(horizontal: 20),
             decoration: BoxDecoration(
-              color: CustomColor.NavButtonBG,
+              color: CustomColor.navButtonBG,
               borderRadius: BorderRadius.circular(100), // Rounded corners
             ),
             child: Row(

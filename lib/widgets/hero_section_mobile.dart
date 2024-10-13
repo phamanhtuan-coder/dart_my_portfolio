@@ -6,10 +6,10 @@ class HeroSectionMobile extends StatelessWidget {
   final double screenWidth;
 
   const HeroSectionMobile({
-    Key? key,
+    super.key,
     required this.screenHeight,
     required this.screenWidth,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -20,7 +20,7 @@ class CustomColor {
 
   // Navigation colors
   static const Color navBg = Color(0xFF5A0F0C); // Dark Red
-  static const Color NavButtonBG = Color(0xFF7E1E1A);
+  static const Color navButtonBG = Color(0xFF7E1E1A);
   static const Color navBgStart = Color(0xFF5D3A33); // Dark Brownish Red (start of gradient)
   static const Color navBgEnd = Color(0xFF5A0F0C);   // Slightly Lighter Red (end of gradient)
   static const Color navButtonColor = Color(0xFFE4D6A7); // Color for navigation buttons in the top app bar

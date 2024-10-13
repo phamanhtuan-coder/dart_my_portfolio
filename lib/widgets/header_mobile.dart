@@ -26,7 +26,7 @@ class HeaderMobile extends StatelessWidget {
               Container(
                 width: 60,
                 decoration: BoxDecoration(
-                  color: CustomColor.NavButtonBG,
+                  color: CustomColor.navButtonBG,
                   borderRadius: BorderRadius.circular(100), // Rounded corners
                 ),
                 child:

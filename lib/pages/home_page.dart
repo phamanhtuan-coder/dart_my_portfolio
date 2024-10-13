@@ -6,6 +6,7 @@ import 'package:my_portfolio/widgets/header_desktop.dart';
 import 'package:my_portfolio/widgets/header_mobile.dart';
 import 'package:my_portfolio/widgets/hero_section_desktop.dart';
 import 'package:my_portfolio/widgets/hero_section_mobile.dart';
+import 'package:my_portfolio/widgets/skill_section_desktop.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -50,31 +51,20 @@ class _HomePageState extends State<HomePage> {
               else
                 HeroSectionMobile(screenHeight: screenHeight, screenWidth: screenWidth),
 
-              // Dark Section (About Me)
-              Container(
-                height: 500,
-                width: double.infinity,
-                color: CustomColor.bgDark,
-                child: Center(
-                  child: Text(
-                    "About Me",
-                    style: TextStyle(
-                      color: CustomColor.textPrimary,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
+              // Dark Section (Skills)
+              if (constraints.maxWidth > kMinDesktopMaxWidth)
+              SkillSectionDesktop(),
+              //else
 
-              // Light Section (Skills)
+
+              // Light Section (About Me)
               Container(
                 height: 500,
                 width: double.infinity,
                 color: CustomColor.bgLight,
                 child: Center(
                   child: Text(
-                    "Skills",
+                    "About Me",
                     style: TextStyle(
                       color: CustomColor.subColor,
                       fontSize: 24,
@@ -83,6 +73,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
+
+
 
               // Dark Section (Past Experience)
               Container(
