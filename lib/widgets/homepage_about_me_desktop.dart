@@ -16,7 +16,6 @@ class _AboutMeSectionDesktopState extends State<AboutMeSectionDesktop> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 600, // Adjusted height for a larger desktop section
       width: double.infinity,
       color: CustomColor.bgLight,
       child: Padding(
@@ -29,7 +28,7 @@ class _AboutMeSectionDesktopState extends State<AboutMeSectionDesktop> {
               "Một chút xíu về mình",
               style: TextStyle(
                 color: CustomColor.subColor,
-                fontSize: 32, // Larger font for desktop
+                fontSize: 28, // Larger font for desktop
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -69,9 +68,7 @@ class _AboutMeSectionDesktopState extends State<AboutMeSectionDesktop> {
                         const SizedBox(height: 20),
                         // Read More button (Placeholder)
                         ElevatedButton(
-                          onPressed: () {
-
-                          },
+                          onPressed: () {},
                           style: ElevatedButton.styleFrom(
                             backgroundColor: CustomColor.subColor, // Button color
                           ),
@@ -80,9 +77,9 @@ class _AboutMeSectionDesktopState extends State<AboutMeSectionDesktop> {
                       ],
                     ),
                   ),
-                  // Right Side: Slideshow for Images
+                  // Right Side: Slideshow for Images and Slider
                   Expanded(
-                    flex: 2,
+                    flex: 1,
                     child: Stack(
                       children: [
                         // Image
@@ -90,7 +87,7 @@ class _AboutMeSectionDesktopState extends State<AboutMeSectionDesktop> {
                           alignment: Alignment.center,
                           child: Container(
                             width: 450, // Image width
-                            height: 300, // Image height
+                            height: 350, // Image height
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
                               boxShadow: [
@@ -110,29 +107,28 @@ class _AboutMeSectionDesktopState extends State<AboutMeSectionDesktop> {
                             ),
                           ),
                         ),
-                        //Slider
-
+                        // Slider Positioned correctly within Stack
+                        Positioned(
+                          right: 0,
+                          top: 0,
+                          bottom: 0,
+                          child: VerticalTimelineSliderDesktop(
+                            currentIndex: _currentSlideIndex,
+                            onSelected: (index) {
+                              setState(() {
+                                _currentSlideIndex = index;
+                              });
+                            },
+                            timelineData: aboutMeData,
+                          ),
+                        ),
                       ],
-
-                    ),
-                  ),
-                  Positioned(
-                    right: 10,
-                    top: 0,
-                    bottom: 0,
-                    child: VerticalTimelineSliderDesktop(
-                      currentIndex: _currentSlideIndex,
-                      onSelected: (index) {
-                        setState(() {
-                          _currentSlideIndex = index;
-                        });
-                      },
-                      timelineData: aboutMeData,
                     ),
                   ),
                 ],
               ),
             )
+
           ],
         ),
 
@@ -140,6 +136,8 @@ class _AboutMeSectionDesktopState extends State<AboutMeSectionDesktop> {
 
 
       ),
+
+
     );
   }
 }

@@ -1,6 +1,6 @@
 const List<Map> platformItems = [
   {
-    'title': 'Web \nDevelopment',
+    'title': 'Cross Platform \nDevelopment',
     'img': 'assets/web_dev_icon.png'
   },
   {

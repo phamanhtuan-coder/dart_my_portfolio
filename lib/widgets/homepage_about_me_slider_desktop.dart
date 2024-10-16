@@ -6,11 +6,11 @@ class VerticalTimelineSliderDesktop extends StatelessWidget {
   final List<Map<String, String>> timelineData;
 
   const VerticalTimelineSliderDesktop({
-    Key? key,
+    super.key,
     required this.currentIndex,
     required this.onSelected,
     required this.timelineData,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
